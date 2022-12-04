@@ -24,7 +24,7 @@ function loadPage() {
         dialog.classList.add(currentDialogName)
         screenCurtain.removeAttribute('hidden')
         dialogCloseBtn.addEventListener('click', btnCloseClick)
-        
+
         customAmountInput.addEventListener('focusin', focusInCustomInput)
     }
     function closeDialog() {
@@ -35,5 +35,8 @@ function loadPage() {
     }
     btnOpenDialogPro.addEventListener('click', function(){ openDialog('pro')})
     btnOpenDialogBasic.addEventListener('click', function(){ openDialog('basic')})
+    customAmountInput.addEventListener('focusout', () => {
+      customAmountRadio.checked = false;
+    });
 }
 document.addEventListener('DOMContentLoaded', loadPage)
